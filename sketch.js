@@ -11,6 +11,9 @@ var score = 0;
 function preload()
 {
    
+
+  //getBackgroundImg();
+
 }
 
 function setup() {
@@ -76,7 +79,8 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   
-  background("black");
+  
+  background(6,20,73);
   
   //noStrock();
   fill("red")
@@ -190,23 +194,7 @@ sling.attach(polygon.body);
 
 }
 
-async function getBackgroundImg(){
-   var time = await fetch("http://worldtimeapi.org/api/timezone/Asia/Odisha");
-   var timejson = await time.json();
 
-   var datetime = timejson.datetime;
-   var hour = datetime.slice(11,13);
-   
-   if(hour>=0600 && hour<=1900){
-       backimg = strock("yellow");
-   }
-   else{
-       backimg = strock("blue");
-   }
-
-   backgroundimg = loadImage(bg);
-   console.log(backgroundimg);
-}
 
 
 
